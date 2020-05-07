@@ -8,11 +8,8 @@ A modo de proba, está dispoñible un único script que lé tanto entrada analó
 
 
 Máis información dos sensores probados:
-
-HC-SR501: https://cdn-learn.adafruit.com/downloads/pdf/pir-passive-infrared-proximity-motion-sensor.pdf
-
-FC-51: https://www.playembedded.org/blog/detecting-obstacle-with-ir-sensor-and-arduino/
-
-B36: https://shop.allnet.de/media/pdf/3c/d6/d2/142989-Datenblatt_ES.pdf
+* HC-SR501: https://cdn-learn.adafruit.com/downloads/pdf/pir-passive-infrared-proximity-motion-sensor.pdf
+* FC-51: https://www.playembedded.org/blog/detecting-obstacle-with-ir-sensor-and-arduino/
+* B36: https://shop.allnet.de/media/pdf/3c/d6/d2/142989-Datenblatt_ES.pdf
 
 
