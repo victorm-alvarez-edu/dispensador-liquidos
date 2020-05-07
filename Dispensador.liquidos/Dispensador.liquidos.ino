@@ -42,6 +42,7 @@ float umbralB36 = 2.5;    // Umbral de tensión para o B36
 void setup() {
   pinMode(PIR, INPUT);
   pinMode(RELAY, OUTPUT);
+  digitalWrite(RELAY, LOW);
   Serial.begin(9600);
 }
 
