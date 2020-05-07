@@ -33,6 +33,7 @@ bool pir = false;         // Estado do sensor de presenza
 void setup() {
   pinMode(PIR, INPUT);
   pinMode(RELAY, OUTPUT);
+  digitalWrite(RELAY, LOW);
   Serial.begin(9600);
 }
 
