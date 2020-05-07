@@ -44,16 +44,16 @@ void loop() {
   pir = !digitalRead(PIR);
   // Se o sensor está activo e pasou tempo suficiente
   if(pir && tempoCumplido) {
-    Serial.print("Estado sensor IR: "); Serial.println(pir);
-    Serial.print("Tempo cumplido: "); Serial.println(tempoCumplido);
+    //Serial.print("Estado sensor IR: "); Serial.println(pir);
+    //Serial.print("Tempo cumplido: "); Serial.println(tempoCumplido);
     digitalWrite(RELAY, HIGH);  // ... activa dispensador
-    Serial.println("Relé ON");
+    //Serial.println("Relé ON");
     tInicial = millis();        // ... empeza temporización
   }
   //Se pasou o tempo que necesita o mecanismo dispensador...
   if(millis() - tInicial >= tDispensador * 1000) {
     digitalWrite(RELAY, LOW);  //  Apagamos dispensador
-    Serial.println("Relé OFF");
+    //Serial.println("Relé OFF");
   }
   // Engadimos unha pequena espera antes de habilitar dispensador
   tempoCumplido = millis() - tInicial >= (tDispensador + tEspera) * 1000;
