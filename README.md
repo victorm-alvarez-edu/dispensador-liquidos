@@ -5,6 +5,8 @@ Para xestionar a dispensación de líquidos usaremos un relé que activa/desacti
 
 A modo de proba, está dispoñible un único script que lé tanto entrada analóxica como dixital. Aparte deste, facilítanse dous scripts para uso definitivo: (a) para entrada analóxica e (b) para entrada dixital.
 
+
+
 Máis información dos sensores probados:
 
 HC-SR501: https://cdn-learn.adafruit.com/downloads/pdf/pir-passive-infrared-proximity-motion-sensor.pdf
