@@ -18,7 +18,7 @@ void loop() {
   int lectura = analogRead(A0);
   Serial.print("Valor sensor: "); Serial.print(lectura);
   Serial.print("\t\tTensión equiv: ");
-  Serial.print(map(lectura, 0, 1023, 0, 500)/100);
+  Serial.print(map(lectura, 0, 1023, 0, 500)/100.);
   Serial.println(" V");
   delay(espera);
 }
