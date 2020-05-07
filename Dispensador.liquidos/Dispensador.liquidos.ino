@@ -49,7 +49,7 @@ void setup() {
 void loop() {
   // Lectura do sensor de presenza
   pir = digitalRead(PIR);
-  b36 = map(analogRead(A0), 0, 1023, 0, 5) >= umbralB36;
+  b36 = map(analogRead(A0), 0, 1023, 0, 500) >= umbralB36 * 100;
   // Se o sensor está activo e pasou tempo suficiente
   if((pir && tempoCumplido) || (b36 && tempoCumplido)) {  
     digitalWrite(RELAY, HIGH);  // ... activa dispensador
