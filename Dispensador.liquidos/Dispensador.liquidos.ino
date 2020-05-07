@@ -36,7 +36,7 @@ bool tempoCumplido = true;
 bool pir = false;         // Estado do sensor de presenza
 bool b36 = false;         // Estado do sensor analóxico
 
-float umbralB36 = 2.5;    // Umbral de tensión para o B36
+float umbralB36 = 0;    // Umbral de tensión para o B36
 
 // -------- Declaración de E/S --------
 void setup() {
