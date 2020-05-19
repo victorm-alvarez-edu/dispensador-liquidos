@@ -28,6 +28,7 @@ int tEspera = 10;      // Tempo en segundos de espera antes de suministrar
 unsigned long int tInicial = 0; // Importante: unsigned long int evita desbordamento
 bool tempoCumplido = true;
 bool pir = false;         // Estado do sensor de presenza
+int espera = 600;
 
 // -------- Declaración de E/S --------
 void setup() {
@@ -53,6 +54,8 @@ void loop() {
   }
   // Engadimos unha pequena espera antes de habilitar dispensador
   tempoCumplido = millis() - tInicial >= (tDispensador + tEspera) * 1000;
+  
+  delay(espera);
 }
 
 /*
