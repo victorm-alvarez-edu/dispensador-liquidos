@@ -22,8 +22,9 @@
 #define calcDist(t) t*0.017
 
 // Variables para o sensor de ultrasóns
-float tempo, distancia;
-float ti, tf;      // Tempos de envío e recepción do pulso
+float distancia;
+unsigned long int tempo;
+unsigned long int ti, tf;      // Tempos de envío e recepción do pulso
 int echo;
 float lectura = -1; // Valor da distancia (cm) medida polo sensor
 float dMin = 2.0;  // Distancia mínima para detectar presenza (cm)
@@ -37,6 +38,7 @@ unsigned long int tInicial = 0; // Importante: unsigned long int evita desbordam
 bool tempoCumplido = true;
 bool sensor = false;         // Estado do sensor de presenza
 int espera = 600;
+String mensaxe = "";
 
 // -------- Declaración de E/S --------
 void setup() {
@@ -53,6 +55,9 @@ void loop() {
   // Lectura do sensor de presenza
   lectura = medirDist();
   sensor = (lectura <= dMax) && (lectura >= dMin);  // Comprobamos que está dentro do rango
+  mensaxe = "Distancia:  " + String(lectura) + " cm \tSensor ON/OFF:  " + String(sensor);
+  mensaxe += " \tTempo cumplido SI/NON:  " + String(tempoCumplido);
+  Serial.println(mensaxe);
   // Se o sensor está activo e pasou tempo suficiente
   if(sensor && tempoCumplido) {
     digitalWrite(RELAY, HIGH);  // ... activa dispensador
@@ -76,6 +81,7 @@ float medirDist() {
   digitalWrite(TRIGGER, HIGH);
   delayMicroseconds(10);
   digitalWrite(TRIGGER, LOW);
+//  tempo = pulseIn(ECHO, HIGH);
   echo = digitalRead(ECHO);
   ti = micros();
   while(echo == LOW) {
@@ -86,8 +92,6 @@ float medirDist() {
     tf = micros();
   }
   tempo = tf - ti;
-  tempo /= 2;
-  return(calcDist(tempo));
+  return(calcDist(tempo/2.));
 }
-
 
