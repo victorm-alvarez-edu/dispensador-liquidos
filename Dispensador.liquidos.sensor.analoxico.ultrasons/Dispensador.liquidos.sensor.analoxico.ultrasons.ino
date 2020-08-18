@@ -32,8 +32,8 @@ float dMax = 12.5;  // Distancia máxima para detectar presenza (cm)
 // por fóra do rango [dMin, dMax], o dispensador non actúa
 
 // Variables para a lóxica do dispensador
-int tDispensador = 3000;  // Tempo en milisegundos que está ON o dispensador
-int tEspera = 10000;      // Tempo en milisegundos de espera antes de suministrar
+int tDispensador = 3 * 1000;  // Tempo en milisegundos que está ON o dispensador
+int tEspera = 10 * 1000;      // Tempo en milisegundos de espera antes de suministrar
 unsigned long int tInicial = 0; // Importante: unsigned long int evita desbordamento
 bool tempoCumplido = true;
 bool sensor = false;         // Estado do sensor de presenza
